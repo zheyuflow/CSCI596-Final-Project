@@ -45,19 +45,61 @@ export PATH=~/anaconda3/envs/Test01/bin:$PATH
 pip install -r requirements.txt   # may takes several hours
 ```
 
-**Problem solving and debugging record**
+**Problem solving and debugging**
 
-* Hugging face blocked by Chinese government 
+* Hugging face blocked by Chinese government. Solution: Found a mirror source for Hugging face. Add HF_ENDPOINT=https://hf-mirror.com to the training command
 
-​	Found a mirror source for Hugging face. Add HF_ENDPOINT=https://hf-mirror.com to the training command
-
-* Bug in latest fsspec==2023.10.0 issue with streaming datasets.
-
-​	Downgrade fsspec to 2023.9.2
+* Bug in latest fsspec==2023.10.0 issue with streaming datasets. Solution :Downgrade fsspec to 2023.9.2
 
 *  torch.cuda.OutOfMemoryError: CUDA out of memory. 
 
-* RuntimeError: The server socket has failed to listen on any local network address. The server socket has failed to bind to [::]:29500 (errno: 98 - Address already in use). The server socket has failed to bind to 0.0.0.0:29500 (errno: 98 - Address already in use).
+* RuntimeError: The server socket has failed to listen on any local network address. 
+
+
+
+
+
+## Fine-tuning process
+
+Pretrained model: OPT-1.3b (https://huggingface.co/facebook/opt-1.3b)
+
+Dataset for fine-tuning: RM-static. Human labeled choices of which response is better (for example, https://huggingface.co/datasets/Dahoas/rm-static)
+
+![image-20231128193549220](C:\Users\happy\AppData\Roaming\Typora\typora-user-images\image-20231128193549220.png)
+
+
+
+**Step1: Supervised fine-tuning with human labeled data**
+
+Supervised finetuning (SFT) is very similar to standard language model finetuning on casual language tasks (e.g., WikiText-103). The main difference is from the dataset resources, SFT will collect high-quality query-answer pairs to finetune the model for human-perferred generation
+
+```
+python3 train.py --step 1 --deployment-type single_node
+```
+
+**Step 2:  Reward tuning with good/bad answers**
+
+Reward model (RM) fine-tuning is similar to SFT, with the main differences being: (1) the training datasets are different - RM requires both good responses and bad responses to the same query; (2) the training loss is different - RM requires pair ranking loss as the optimizing objective.
+
+```
+python3 train.py --step 2 --deployment-type single_node
+```
+
+**Step 3: Reinforcement Learning with Human Feedback**
+
+Reinforcement learning with Actor-Critic model
+
+```
+python3 train.py --step 3 --deployment-type single_node
+```
+
+
+
+
+
+## Results
+
+![image-20231128174048603](C:\Users\happy\AppData\Roaming\Typora\typora-user-images\image-20231128174048603.png)
 
 
 

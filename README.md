@@ -65,7 +65,7 @@ Pretrained model: OPT-1.3b (https://huggingface.co/facebook/opt-1.3b)
 
 Dataset for fine-tuning: RM-static. Human labeled choices of which response is better (for example, https://huggingface.co/datasets/Dahoas/rm-static)
 
-![image-20231128193549220](C:\Users\happy\AppData\Roaming\Typora\typora-user-images\image-20231128193549220.png)
+![image-20231128193549220](\Pics\1.png)
 
 
 
@@ -99,7 +99,7 @@ python3 train.py --step 3 --deployment-type single_node
 
 ## Results
 
-![image-20231128174048603](C:\Users\happy\AppData\Roaming\Typora\typora-user-images\image-20231128174048603.png)
+![image-20231128174048603](\Pics\2.png)
 
 
 

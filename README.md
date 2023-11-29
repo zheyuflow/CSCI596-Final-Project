@@ -12,7 +12,7 @@ The main library used in this project is Deepspeed. DeepSpeed is a deep learning
 
 ## Setting up Development Environment
 
-I got a machine with 2 RTX4090 at autodl.com with CUDA version 11.8, python3.10, and pytorch 2.0. 
+I rent a machine with 2 RTX4090 at autodl.com (cloud computing platform) with CUDA 11.8, python3.10, and pytorch 2.0. 
 
 **Configuring the CUDA environment**
 

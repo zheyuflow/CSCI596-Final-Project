@@ -65,7 +65,7 @@ Pretrained model: OPT-1.3b (https://huggingface.co/facebook/opt-1.3b)
 
 Dataset for fine-tuning: RM-static. Human labeled choices of which response is better (for example, https://huggingface.co/datasets/Dahoas/rm-static)
 
-![1.png](\Pics\1.png)
+![1.png](/Pics/1.png)
 
 
 
@@ -101,9 +101,9 @@ python3 train.py --step 3 --deployment-type single_node
 
 **training process (step 1):**
 
-![2.png](\Pics\2.png)
+![2.png](/Pics/2.png)
 
-![3.png](\Pics\3.png)
+![3.png](/Pics/3.png)
 
 
 

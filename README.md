@@ -12,7 +12,7 @@ The main library used in this project is Deepspeed. DeepSpeed is a deep learning
 
 ## Setting up Development Environment
 
-I rent a machine with 2 RTX4090 at autodl.com (cloud computing platform) with CUDA 11.8, python3.10, and pytorch 2.0. 
+I got a machine with 2 RTX4090 at autodl.com with CUDA version 11.8, python3.10, and pytorch 2.0. 
 
 **Configuring the CUDA environment**
 
@@ -65,7 +65,7 @@ Pretrained model: OPT-1.3b (https://huggingface.co/facebook/opt-1.3b)
 
 Dataset for fine-tuning: RM-static. Human labeled choices of which response is better (for example, https://huggingface.co/datasets/Dahoas/rm-static)
 
-![2.png](./Pics/2.png)
+![image-20231128193549220](C:\Users\happy\AppData\Roaming\Typora\typora-user-images\image-20231128193549220.png)
 
 
 
@@ -99,7 +99,36 @@ python3 train.py --step 3 --deployment-type single_node
 
 ## Results
 
-![1.png](./Pics/1.png)
+**training process (step 1):**
+
+![image-20231128174048603](C:\Users\happy\AppData\Roaming\Typora\typora-user-images\image-20231128174048603.png)
+
+![image-20231128233648134](C:\Users\happy\AppData\Roaming\Typora\typora-user-images\image-20231128233648134.png)
+
+
+
+**Chat with the trained model:**
+
+```
+python chat.py --path output/actor-models/1.3b
+```
+
+![image-20231128235513031](C:\Users\happy\AppData\Roaming\Typora\typora-user-images\image-20231128235513031.png)
+
+
+
+**Compare with baseline (the pretrained model without fine-tuning):**
+
+```
+cd training/step1_supervised_finetuning
+bash evaluation_scripts/run_prompt.sh
+```
+
+![image-20231129232555784](C:\Users\happy\AppData\Roaming\Typora\typora-user-images\image-20231129232555784.png)
+
+![image-20231129232623697](C:\Users\happy\AppData\Roaming\Typora\typora-user-images\image-20231129232623697.png)
+
+
 
 
 

@@ -113,7 +113,7 @@ python3 train.py --step 3 --deployment-type single_node
 python chat.py --path output/actor-models/1.3b
 ```
 
-![4.png](/Pics/4.png)
+![6.png](/Pics/6.png)
 
 
 
@@ -124,9 +124,9 @@ cd training/step1_supervised_finetuning
 bash evaluation_scripts/run_prompt.sh
 ```
 
-![5.png](/Pics/5.png)
+![7.png](/Pics/7.png)
 
-![6.png](/Pics/6.png)
+![8.png](/Pics/8.png)
 
 
 

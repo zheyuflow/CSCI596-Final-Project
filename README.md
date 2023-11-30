@@ -65,7 +65,7 @@ Pretrained model: OPT-1.3b (https://huggingface.co/facebook/opt-1.3b)
 
 Dataset for fine-tuning: RM-static. Human labeled choices of which response is better (for example, https://huggingface.co/datasets/Dahoas/rm-static)
 
-![1.png](/Pics/1.png)
+![2.png](/Pics/2.png)
 
 
 
@@ -101,7 +101,7 @@ python3 train.py --step 3 --deployment-type single_node
 
 **training process (step 1):**
 
-![2.png](/Pics/2.png)
+![1.png](/Pics/1.png)
 
 ![3.png](/Pics/3.png)
 
@@ -113,7 +113,7 @@ python3 train.py --step 3 --deployment-type single_node
 python chat.py --path output/actor-models/1.3b
 ```
 
-![image-20231128235513031](C:\Users\happy\AppData\Roaming\Typora\typora-user-images\image-20231128235513031.png)
+![4.png](/Pics/4.png)
 
 
 
@@ -124,9 +124,9 @@ cd training/step1_supervised_finetuning
 bash evaluation_scripts/run_prompt.sh
 ```
 
-![image-20231129232555784](C:\Users\happy\AppData\Roaming\Typora\typora-user-images\image-20231129232555784.png)
+![5.png](/Pics/5.png)
 
-![image-20231129232623697](C:\Users\happy\AppData\Roaming\Typora\typora-user-images\image-20231129232623697.png)
+![6.png](/Pics/6.png)
 
 
 

@@ -104,7 +104,7 @@ python3 train.py --step 3 --deployment-type single_node
 ![1.png](/Pics/1.png)
 
 ![3.png](/Pics/3.png)
-
+The training process took approximately 7 hours.
 
 
 **Chat with the trained model:**

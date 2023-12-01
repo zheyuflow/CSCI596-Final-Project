@@ -1,3 +1,5 @@
+Zheyu Wang
+
 # Fine-tuning a LLM (Large Language Model) on multiple GPUs: An engineering practice
 
 ## Motivation and Introduction

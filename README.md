@@ -1,4 +1,4 @@
-# Fine-tuning a LLM model on multiple GPUs: An engineering practice
+# Fine-tuning a LLM (Large Language Model) on multiple GPUs: An engineering practice
 
 ## Motivation and Introduction
 
